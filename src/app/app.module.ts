@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { ResultCardComponent } from './components/result-card/result-card.component';
 import { ModifyResultComponent } from './pages/modify-result/modify-result.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,11 @@ import { RegisterComponent } from './pages/register/register.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
