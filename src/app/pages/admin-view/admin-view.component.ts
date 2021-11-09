@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminViewComponent implements OnInit {
 
+  students = [
+    {
+      id: 1,
+      name: 'Praneeth'
+    },
+    {
+      id: 2,
+      name: 'Rajesh'
+    },
+    {
+      id: 3,
+      name: 'Ramesh'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

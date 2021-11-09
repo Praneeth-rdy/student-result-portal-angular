@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { StudentViewComponent } from './pages/student-view/student-view.component';
 import { AdminViewComponent } from './pages/admin-view/admin-view.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { ResultCardComponent } from './components/result-card/result-card.component';
+import { ModifyResultComponent } from './pages/modify-result/modify-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     StudentViewComponent,
-    AdminViewComponent
+    AdminViewComponent,
+    LayoutComponent,
+    ResultCardComponent,
+    ModifyResultComponent
   ],
   imports: [
     BrowserModule,
