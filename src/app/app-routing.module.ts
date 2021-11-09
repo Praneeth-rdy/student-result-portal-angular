@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminViewComponent } from './pages/admin-view/admin-view.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ModifyResultComponent } from './pages/modify-result/modify-result.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { StudentViewComponent } from './pages/student-view/student-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'myresult', component: StudentViewComponent },
   { path: 'results', component: AdminViewComponent },
   // Modify result page dynamic routing

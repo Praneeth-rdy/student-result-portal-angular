@@ -9,6 +9,7 @@ import { AdminViewComponent } from './pages/admin-view/admin-view.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ResultCardComponent } from './components/result-card/result-card.component';
 import { ModifyResultComponent } from './pages/modify-result/modify-result.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ModifyResultComponent } from './pages/modify-result/modify-result.compo
     AdminViewComponent,
     LayoutComponent,
     ResultCardComponent,
-    ModifyResultComponent
+    ModifyResultComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
