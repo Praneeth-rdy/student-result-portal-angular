@@ -7,28 +7,18 @@ import { ResultService } from 'src/app/result.service';
   styleUrls: ['./student-view.component.css']
 })
 export class StudentViewComponent implements OnInit {
-  name = 'Rajesh'
+  name = ''
   subjects = [
     {
-      code: 'SBAA1603',
-      name: 'temp',
+      code: '',
+      name: '',
       user_subject: {
-        semester_number: 4,
-        marks: 89,
-        max_marks: 100,
-        remarks: 'pass'
+        semester_number: 0,
+        marks: 0,
+        max_marks: 0,
+        remarks: ''
       }
-    },
-    {
-      code: 'SBAA1602',
-      name: 'temp',
-      user_subject: {
-        semester_number: 4,
-        marks: 89,
-        max_marks: 100,
-        remarks: 'pass'
-      }
-    },
+    }
   ]
   constructor(private _result: ResultService) { }
 
