@@ -1,0 +1,8 @@
+#navbarSupportedContent{
+    flex-grow: 1;
+    justify-content: end;
+}
+
+.navbar {
+    padding: 20px 100px;
+}

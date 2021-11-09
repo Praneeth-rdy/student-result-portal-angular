@@ -1,0 +1,48 @@
+.progress-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.progress-card-container > h1 {
+    font-size: 48px;
+}
+
+.progress-card {
+    padding: 70px 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.progress-card h1 {
+    text-align: center;
+}
+
+.progress-card h2 {
+    text-align: center;
+    color: rgb(87, 87, 87);
+}
+
+.progress-card .subject-card {
+    margin: 40px 0;
+}
+
+.progress-card .data-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.progress-card .data-container .grade-wrapper {
+    margin: 10px 30px;
+}
+
+.progress-card .data-container .grade-wrapper h3 {
+    color: rgb(124, 124, 124);
+    font-size: 24px;
+}

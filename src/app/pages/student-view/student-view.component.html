@@ -1,1 +1,50 @@
-<p>student-view works!</p>
+<div class="progress-card-container container">
+    <h1 class="text-center m-4">
+        Grade Card
+    </h1>
+    <div class="row">
+        <div class="progress-card m-auto col-12 col-md-8">
+            <h1>
+                {{ name }}
+            </h1>
+            <div *ngIf="(subjects); else elseBlock">
+                <div *ngFor="let subject of subjects" class="subject-card">
+                    <h2>
+                        {{subject.name}} - {{subject.code}}
+                    </h2>
+                    <div class="data-container">
+                        <div class="grade-wrapper">
+                            <h3>
+                                Sem No.
+                            </h3>
+                            <p>
+                                {{subject.user_subject.semester_number}}
+                            </p>
+                        </div>
+                        <div class="grade-wrapper">
+                            <h3>
+                                Marks
+                            </h3>
+                            <p>
+                                {{subject.user_subject.marks}}/{{subject.user_subject.max_marks}}
+                            </p>
+                        </div>
+                        <div class="grade-wrapper">
+                            <h3>
+                                Remarks
+                            </h3>
+                            <p>
+                                {{subject.user_subject.remarks}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #elseBlock>
+                <h3 class="text-center m-4">
+                    No Result Available
+                </h3>
+            </ng-template>
+        </div>
+    </div>
+</div>
