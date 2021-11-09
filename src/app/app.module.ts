@@ -13,6 +13,7 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
 import { ModifyResultComponent } from './pages/modify-result/modify-result.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { AuthService } from './auth.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
