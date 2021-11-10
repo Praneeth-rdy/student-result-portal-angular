@@ -1,4 +1,8 @@
+
 <div class="container main-container">
+    <div class="d-flex">
+        <input (input)="search()" placeholder="Search" [(ngModel)]="searchField" class="form-control" />
+    </div>
     <div class="students-container row">
         <div *ngFor="let student of students" class="student-card col-12">
             <div>

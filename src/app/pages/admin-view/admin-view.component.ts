@@ -15,7 +15,17 @@ export class AdminViewComponent implements OnInit {
       registration_number: '',
       Subjects: []
     }
-  ]
+  ];
+
+  allStudents = [
+    {
+      name: '',
+      registration_number: '',
+      Subjects: []
+    }
+  ];
+
+  searchField = '';
 
   constructor(private _result: ResultService, private _router: Router) { }
 
@@ -25,6 +35,7 @@ export class AdminViewComponent implements OnInit {
         next: res => {
           console.log(JSON.parse(res.users))
           this.students = JSON.parse(res.users);
+          this.allStudents = JSON.parse(res.users);
         },
         error: err => console.log(err)
       })
@@ -42,8 +53,14 @@ export class AdminViewComponent implements OnInit {
       })
   }
 
-  editResult(registration_number:any) {
+  editResult(registration_number: any) {
     this._router.navigate([`/results/${registration_number}`]);
+  }
+
+  search() {
+    this.students = this.allStudents.filter((student) => {
+      return student.registration_number.toString().includes(this.searchField);
+    })
   }
 
 }
