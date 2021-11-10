@@ -1,8 +1,12 @@
+.bg-container {
+    background-color: antiquewhite;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 .student-card {
@@ -10,11 +14,12 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: antiquewhite;
+    background-color: aliceblue;
     margin: 10px 0;
     border-radius: 8px;
     padding: 25px 50px;
     transition: transform 0.3s;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
 .student-card h2 {

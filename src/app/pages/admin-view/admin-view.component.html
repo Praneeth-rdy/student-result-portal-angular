@@ -1,31 +1,32 @@
-
-<div class="container main-container">
-    <div class="d-flex">
-        <input (input)="search()" placeholder="Search" [(ngModel)]="searchField" class="form-control" />
-    </div>
-    <div class="students-container row">
-        <div *ngFor="let student of students" class="student-card col-12">
-            <div>
-                <h2>
-                    {{student.name}} - {{student.registration_number}}
-                </h2>
-            </div>
-            <div *ngIf="student.Subjects.length; else elseContainer">
-                <button (click)="editResult(student.registration_number)" class="btn btn-success">
-                    View / Edit
-                </button>
-                <button (click)="deleteResult(student.registration_number)" class="btn btn-danger">
-                    Delete
-                </button>
-            </div>
-            <ng-template #elseContainer>
+<div class="bg-container">
+    <div class="container main-container">
+        <div class="d-flex">
+            <input (input)="search()" placeholder="Search" [(ngModel)]="searchField" class="form-control" />
+        </div>
+        <div class="students-container row">
+            <div *ngFor="let student of students" class="student-card col-12">
                 <div>
+                    <h2>
+                        {{student.name}} - {{student.registration_number}}
+                    </h2>
+                </div>
+                <div *ngIf="student.Subjects.length; else elseContainer">
                     <button (click)="editResult(student.registration_number)" class="btn btn-success">
-                        Add Result
+                        View / Edit
+                    </button>
+                    <button (click)="deleteResult(student.registration_number)" class="btn btn-danger">
+                        Delete
                     </button>
                 </div>
-            </ng-template>
+                <ng-template #elseContainer>
+                    <div>
+                        <button (click)="editResult(student.registration_number)" class="btn btn-success">
+                            Add Result
+                        </button>
+                    </div>
+                </ng-template>
 
+            </div>
         </div>
     </div>
 </div>

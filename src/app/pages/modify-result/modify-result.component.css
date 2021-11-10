@@ -1,6 +1,10 @@
+.bg-container {
+    background-color: antiquewhite;
+    padding: 5vw;
+}
+
 .modif-container {
-    min-height: 100vh;
-    margin: 5vw auto;
+    min-height: 90vh;
 }
 
 .form-container {
@@ -10,6 +14,7 @@
 .form {
     background-color: aliceblue;
     padding: 100px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
 .form h1 {
