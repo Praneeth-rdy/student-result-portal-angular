@@ -11,6 +11,7 @@ export class ResultService {
   private _myResultUrl = "http://localhost:5050/api/my-result";
   private _deleteResultUrl = "http://localhost:5050/api/results/delete";
   private _updateResultUrl = "http://localhost:5050/api/results/update";
+  private _getStudentData = "http://localhost:5050/api/get-user-data";
 
   constructor(private http: HttpClient) { }
 
@@ -36,5 +37,9 @@ export class ResultService {
 
   getAllStudents() {
     return this.http.get<any>(this._getStudentsUrl);
+  }
+
+  getStudentData(registration_number: any) {
+    return this.http.get<any>(this._getStudentData + `?registration_number=${registration_number}`);
   }
 }

@@ -17,6 +17,14 @@ export class LoginComponent implements OnInit {
   constructor(private _auth: AuthService, private _router: Router) { }
 
   ngOnInit(): void {
+    if (!!localStorage.getItem('authToken')) {
+      if (localStorage.getItem('role') === 'admin') {
+        this._router.navigate(['/results']);
+      } else {
+        this._router.navigate(['/myresult']);
+      }
+
+    }
   }
 
   loginUser() {
@@ -25,12 +33,13 @@ export class LoginComponent implements OnInit {
         next: res => {
           console.log(res);
           localStorage.setItem('authToken', res.token);
-          if(res.role==='admin'){
+          localStorage.setItem('role', res.role);
+          if (res.role === 'admin') {
             this._router.navigate(['/results']);
           } else {
             this._router.navigate(['/myresult']);
           }
-          
+
         },
         error: err => console.log(err)
       })

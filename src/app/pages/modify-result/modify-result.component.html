@@ -1,5 +1,51 @@
-<p>modify-result works!</p>
-
-<h1>
-    {{resultId}}
-</h1>
+<div class="login-container container">
+    <div class="form-container row">
+        <div class="form col-12 col-md-7">
+            <h1>
+                Result - {{resultData.name}}
+            </h1>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">
+                        Name
+                    </label>
+                    <input [(ngModel)]="resultData.registration_number" type="text" class="form-control"
+                        name="registration_number" id="name" disabled>
+                </div>
+                <div *ngFor="let result of resultData.result; let i = index" [attr.data-index]="i">
+                    <div>
+                        <h2>
+                            {{result.code}} (/{{result.max_marks}})
+                        </h2>
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-3">
+                                <label for="sem_no{{i}}" class="form-label">
+                                    Sem No.
+                                </label>
+                                <input [(ngModel)]="resultData.result[i].semester_number" type="text" class="form-control"
+                                    name="semester_number{{i}}" id="sem_no{{i}}">
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                                <label for="marks{{i}}" class="form-label">
+                                    Marks
+                                </label>
+                                <input [(ngModel)]="resultData.result[i].marks" type="text" class="form-control"
+                                    name="marks{{i}}" id="marks{{i}}">
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                                <label for="remark{{i}}" class="form-label">
+                                    Remark (pass/fail)
+                                </label>
+                                <input [(ngModel)]="resultData.result[i].remark" type="text" class="form-control"
+                                    name="remark{{i}}" id="remark{{i}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="updateResult()" type="submit" class="btn btn-primary">
+                    Update
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
