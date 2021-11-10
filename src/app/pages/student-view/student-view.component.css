@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+    margin: 5vw auto;
 }
 
 .progress-card-container > h1 {

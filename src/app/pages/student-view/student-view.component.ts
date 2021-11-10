@@ -26,8 +26,7 @@ export class StudentViewComponent implements OnInit {
     this._result.getMyResult()
     .subscribe({
       next: res => {
-        console.log(JSON.parse(res.userData));
-        this.subjects = JSON.parse(res.userData).subjects;
+        this.subjects = JSON.parse(res.userData).Subjects;
         this.name = JSON.parse(res.userData).name;
       },
       error: err => {

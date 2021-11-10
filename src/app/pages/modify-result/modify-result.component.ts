@@ -15,13 +15,30 @@ export class ModifyResultComponent implements OnInit {
     result: [
       {
         "code": "",
-        "semester_number": 0,
-        "marks": 0,
-        "max_marks": 0,
+        "semester_number": '',
+        "marks": '',
+        "max_marks": '',
         "remark": "fail"
       }
     ]
   }
+
+  emptyResultTemplate = [
+    {
+      code: '',
+      semester_number: '',
+      marks: '',
+      max_marks: '',
+      remark: 'fail'
+    },
+    {
+      code: '',
+      semester_number: '',
+      marks: '',
+      max_marks: '',
+      remark: 'fail'
+    }
+  ]
 
   public resultId: Number | null | undefined;
   constructor(private route: ActivatedRoute, private _result: ResultService, private _router: Router) { }
@@ -33,6 +50,74 @@ export class ModifyResultComponent implements OnInit {
       .subscribe({
         next: res => {
           this.resultData = JSON.parse(res.userData)
+          console.log(this.resultData)
+          if (this.resultData.result.length === 0) {
+            this.resultData.result = [
+              {
+                code: 'SBAA1603',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SCSA1401',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SCSA1402',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SCSA1403',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SECA1404',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SMTA1402',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SCSA2401',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SCSA2402',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+              {
+                code: 'SECA2405',
+                semester_number: '',
+                marks: '',
+                max_marks: '',
+                remark: 'fail'
+              },
+            ]
+          }
         },
         error: err => console.log(err)
       })
